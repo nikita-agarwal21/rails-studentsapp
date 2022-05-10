@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid">
+<%= link_to 'students app', home_index_path, class:"navbar-brand"%>
+
+  
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+      <li class="nav-item">
+   <%= link_to 'about us', home_about_path, class:"nav-link"%>
+        
+      </li>
+      <li class="nav-item">
+      <%= link_to 'students list', students_path, class:"nav-link"%>
+           
+         </li>
+         <li class="nav-item">
+         <%= link_to 'add students ', new_student_path, class:"nav-link"%>
+              
+        </li>
+
+            <li class="nav-item">
+            <%= link_to 'courses list', courses_path, class:"nav-link"%>
+                 
+               </li>
+               <li class="nav-item">
+               <%= link_to 'add courses ', new_course_path, class:"nav-link"%>
+                    
+                  </li> 
+                  <li class="nav-item">
+                  <%= link_to 'results ', results_result_path, class:"nav-link"%>
+                       
+                     </li>     
+    </ul>
+    
+  </div>
+</div>
+</nav>

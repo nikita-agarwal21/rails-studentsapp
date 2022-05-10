@@ -1,0 +1,47 @@
+<p style="color: green"><%= notice %></p>
+
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>usn</th>
+      <th>name</th>
+      <th>gender</th>
+      <th>phone number</th>
+     <th> </th>
+     <th> </th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+
+  <% @students.each do |student| %>
+    <tr>
+    <td>
+    <%= student.usn%>
+
+
+    </td>
+    
+    <td><%= student.name %></td>
+    <td><%= student.gender %></td>
+    <td><%= student.phone_number %></td>
+    
+    
+    <td>
+      <%= link_to "Show this student", student %>
+   </td>
+
+   <td><%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+        
+   </tr>
+   <% end %>
+ 
+</tbody>
+</table>
+<br>
+
+
+<%= link_to "New student", new_student_path, class:"btn btn-secondary"%>

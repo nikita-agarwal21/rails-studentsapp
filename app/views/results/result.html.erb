@@ -1,0 +1,65 @@
+
+<%= form_tag(results_result_path, :method=>"get" )do %>
+<%= label_tag(:search, "enter usn:")%>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag("search", :usn=>nil)%>  
+<% end %>
+
+
+
+
+<%@learners.each do |learner|%>
+<h1>usn</h1>   <%= learner.usn%>
+<h2>name</h2> <%= learner.name%>
+<%end%>  
+
+
+
+<div class="row">
+<div class="table-responsive col-md-6">
+  
+   
+
+<table class="table table-bordered">
+
+     <tr><th> course code</th><th>course name</th></tr>
+
+     <%@subs.each do |sub|%>
+       <tr>
+       <td><%= sub.course_code%></td><td><%= sub.course_name%></td>
+       </tr>
+     <%end%>
+</table>
+
+</div>
+<div class="table-responsive col-md-6">
+ 
+  <table class="table table-bordered">
+
+    <tr><th> total</th><th>remarks</th></tr>
+
+    <%@marks.each do|mark|%>
+      <tr><% @cee=mark.cee_obtained%>
+      <% @see=mark.see_obtained%>
+
+      <% @total= @cee+@see%>
+      <td><%=@total%></td>
+
+      <%if @total > 45 %>
+            <td>  <%= "pass"%></td>
+      <%else %>
+            <td>  <%= "fail"%></td>
+      <%end%>
+
+      </tr>
+
+    <%end%>
+  </table>
+
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @student.name %>
+   
+  </h1>
+  <p class="lead">
+    
+    <%= @student.usn %>  |  
+    <%= @student.gender %> |
+    <%= @student.phone_number %>  
+  </p>
+  <br/>
+
+  <%= link_to "Edit this student", edit_student_path(@student) , class:"btn btn-secondary"%> 
+ 
+  <%= link_to "Destroy this student", @student, method: :delete , data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
+  <%= link_to "Back to students", students_path , class:"btn btn-dark"%>
+  </div>

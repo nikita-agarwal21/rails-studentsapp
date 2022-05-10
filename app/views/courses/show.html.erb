@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @course.course_name %>
+   
+  </h1>
+  <p class="lead">
+    
+    <%= @course.course_code %>  |  
+    <%= @course.cee_marks %> |
+    <%= @course.see_marks %>  
+  </p>
+  <br/>
+  <%= link_to "Edit this course", edit_course_path(@course) , class:"btn btn-secondary"%> 
+  <%= link_to "Destroy this course", @course, method: :delete , data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  
+  <%= link_to "Back to courses", courses_path , class:"btn btn-dark"%>
+
+</div>
